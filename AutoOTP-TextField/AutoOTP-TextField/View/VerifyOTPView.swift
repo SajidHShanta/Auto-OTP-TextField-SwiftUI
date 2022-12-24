@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct VerifyOTPView: View {
+    
+    let otpLength: Int = 6
     @State var otpText: String = ""
+    
     var body: some View {
         VStack {
             Text("Verify OTP")
@@ -30,7 +33,7 @@ struct VerifyOTPView: View {
                             .fill(.primary)
                     }
             }
-            
+            .disableWithOpacity(otpText.count < otpLength)
             
             
         }
@@ -45,3 +48,10 @@ struct VerifyOTPView_Previews: PreviewProvider {
     }
 }
 
+extension View {
+    func disableWithOpacity(_ condition: Bool) -> some View {
+        self
+            .disabled(condition)
+            .opacity(condition ? 0.6 : 1)
+    }
+}
