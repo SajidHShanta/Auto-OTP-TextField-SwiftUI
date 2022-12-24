@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FFD2914129568FBB00416440 /* VerifyOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2914029568FBB00416440 /* VerifyOTPView.swift */; };
 		FFD680F429567FF500E1006F /* AutoOTP_TextFieldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD680F329567FF500E1006F /* AutoOTP_TextFieldApp.swift */; };
 		FFD680F629567FF500E1006F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD680F529567FF500E1006F /* ContentView.swift */; };
 		FFD680F829567FF700E1006F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFD680F729567FF700E1006F /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FFD2914029568FBB00416440 /* VerifyOTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPView.swift; sourceTree = "<group>"; };
 		FFD680F029567FF500E1006F /* AutoOTP-TextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AutoOTP-TextField.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD680F329567FF500E1006F /* AutoOTP_TextFieldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoOTP_TextFieldApp.swift; sourceTree = "<group>"; };
 		FFD680F529567FF500E1006F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFD2913F29568F6D00416440 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFD2914029568FBB00416440 /* VerifyOTPView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FFD680E729567FF500E1006F = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +61,7 @@
 		FFD680F229567FF500E1006F /* AutoOTP-TextField */ = {
 			isa = PBXGroup;
 			children = (
+				FFD2913F29568F6D00416440 /* View */,
 				FFD680F329567FF500E1006F /* AutoOTP_TextFieldApp.swift */,
 				FFD680F529567FF500E1006F /* ContentView.swift */,
 				FFD680F729567FF700E1006F /* Assets.xcassets */,
@@ -139,6 +150,7 @@
 			files = (
 				FFD680F629567FF500E1006F /* ContentView.swift in Sources */,
 				FFD680F429567FF500E1006F /* AutoOTP_TextFieldApp.swift in Sources */,
+				FFD2914129568FBB00416440 /* VerifyOTPView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
