@@ -79,8 +79,11 @@ struct VerifyOTPView: View {
         }
         .frame(width: 45, height: 45)
         .background {
+            //highlight current box
+            let status = (isKeyboardShowing && otpText.count == index)
             RoundedRectangle(cornerRadius: 6, style:  .continuous)
-                .stroke(.gray, lineWidth: 0.5)
+                .stroke(.gray, lineWidth: status ? 1 : 0.4)
+                .animation(.easeInOut(duration: 0.2), value: status)
         }
         .frame(maxWidth: .infinity)
     }
