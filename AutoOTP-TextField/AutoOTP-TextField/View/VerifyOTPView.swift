@@ -62,6 +62,15 @@ struct VerifyOTPView: View {
         }
         .padding()
         .frame(maxHeight: .infinity, alignment: .top)
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+
+                Button("Done"){
+                    isKeyboardShowing.toggle()
+                }
+            }
+        }
     }
     
     @ViewBuilder
