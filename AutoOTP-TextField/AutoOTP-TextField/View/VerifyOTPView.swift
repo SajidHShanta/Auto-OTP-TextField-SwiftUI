@@ -12,6 +12,9 @@ struct VerifyOTPView: View {
     let otpLength: Int = 6
     @State var otpText: String = ""
     
+    //keyboard state
+    @FocusState private var isKeyboardShowing: Bool
+    
     var body: some View {
         VStack {
             Text("Verify OTP")
@@ -26,7 +29,18 @@ struct VerifyOTPView: View {
             }
             .background(content: {
                 TextField("", text: $otpText.limit(otpLength))
+                //heidng the text feild
+                    .frame(width: 1, height: 1)
+                    .opacity(0.0001)
+                    .blendMode(.screen)
+                    .focused($isKeyboardShowing)
+                    .keyboardType(.numberPad)
             })
+            .containerShape(Rectangle())
+            .onTapGesture {
+                //open keyboard
+                isKeyboardShowing.toggle()
+            }
             .padding()
             
             Button {
