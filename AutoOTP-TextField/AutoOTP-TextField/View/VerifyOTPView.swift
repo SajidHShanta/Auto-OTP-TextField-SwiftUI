@@ -24,10 +24,11 @@ struct VerifyOTPView: View {
                     otpTextBox(index)
                 }
             }
+            .background(content: {
+                TextField("", text: $otpText.limit(otpLength))
+            })
             .padding()
             
-            TextField("", text: $otpText )
-
             Button {
                 
             } label: {
@@ -53,7 +54,11 @@ struct VerifyOTPView: View {
     func otpTextBox(_ index: Int) -> some View {
         ZStack {
             if otpText.count > index {
+                //finding char for current index
+                let firstIndex = otpText.startIndex
+                let currentIndex = otpText.index(firstIndex, offsetBy: index)
                 
+                Text(String(otpText[currentIndex]))
             } else {
                 Text("")
             }
@@ -63,6 +68,7 @@ struct VerifyOTPView: View {
             RoundedRectangle(cornerRadius: 6, style:  .continuous)
                 .stroke(.gray, lineWidth: 0.5)
         }
+        .frame(maxWidth: .infinity)
     }
 }
 
@@ -77,5 +83,20 @@ extension View {
         self
             .disabled(condition)
             .opacity(condition ? 0.6 : 1)
+    }
+}
+
+/*
+ Since we only need 6 characters from the TextField as we have only 6 boxes, creating an extension for limiting the binding string to some prescribed limit
+ */
+// Binding <String> extension
+extension Binding where Value == String {
+    func limit(_ length: Int) -> Self {
+        if self.wrappedValue.count > length {
+            DispatchQueue.main.async {
+                self.wrappedValue = String(self.wrappedValue.prefix(length))
+            }
+        }
+        return self
     }
 }
