@@ -18,6 +18,14 @@ struct VerifyOTPView: View {
                 .font(.largeTitle.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
             
+            HStack(spacing: 0) {
+                // otp text box
+                ForEach(0..<otpLength, id: \.self) { index in
+                    otpTextBox(index)
+                }
+            }
+            .padding()
+            
             TextField("", text: $otpText )
 
             Button {
@@ -39,6 +47,22 @@ struct VerifyOTPView: View {
         }
         .padding()
         .frame(maxHeight: .infinity, alignment: .top)
+    }
+    
+    @ViewBuilder
+    func otpTextBox(_ index: Int) -> some View {
+        ZStack {
+            if otpText.count > index {
+                
+            } else {
+                Text("")
+            }
+        }
+        .frame(width: 45, height: 45)
+        .background {
+            RoundedRectangle(cornerRadius: 6, style:  .continuous)
+                .stroke(.gray, lineWidth: 0.5)
+        }
     }
 }
 
