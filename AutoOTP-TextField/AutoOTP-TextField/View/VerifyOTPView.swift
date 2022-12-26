@@ -35,6 +35,8 @@ struct VerifyOTPView: View {
                     .blendMode(.screen)
                     .focused($isKeyboardShowing)
                     .keyboardType(.numberPad)
+                //to show most recent OTP from message
+                    .textContentType(.oneTimeCode)
             })
             .containerShape(Rectangle())
             .onTapGesture {
